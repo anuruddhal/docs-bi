@@ -542,44 +542,57 @@ This documentation is a work in progress.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#step-1-create-a-new-integration-project" class="md-nav__link">
     Step 1: Create a new Integration Project.
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-2-create-an-integration-service" class="md-nav__link">
     Step 2: Create an Integration Service.
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-3-update-the-resource-method" class="md-nav__link">
     Step 3: Update the resource method
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-4-add-the-transformation-logic" class="md-nav__link">
     Step 4: Add the transformation logic
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-5-error-handling" class="md-nav__link">
     Step 5: Error handling
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-6-run-the-integration" class="md-nav__link">
     Step 6: Run the integration
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -779,44 +792,57 @@ This documentation is a work in progress.
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#step-1-create-a-new-integration-project" class="md-nav__link">
     Step 1: Create a new Integration Project.
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-2-create-an-integration-service" class="md-nav__link">
     Step 2: Create an Integration Service.
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-3-update-the-resource-method" class="md-nav__link">
     Step 3: Update the resource method
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-4-add-the-transformation-logic" class="md-nav__link">
     Step 4: Add the transformation logic
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-5-error-handling" class="md-nav__link">
     Step 5: Error handling
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#step-6-run-the-integration" class="md-nav__link">
     Step 6: Run the integration
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -852,7 +878,9 @@ This documentation is a work in progress.
 
 
 <h1 id="transforming-json-to-xml">Transforming JSON to XML<a class="headerlink" href="#transforming-json-to-xml" title="Permanent link">&para;</a></h1>
-<p>This guide explains how to transform JSON data to XML using the <code>json-to-xml</code> function.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>This guide explains how to create a simple integration to convert a JSON payload to an XML payload using the Kola. An HTTP service with a single resource (<code>toXml</code>) will be created to accept a JSON payload and return the XML representation of the payload.
+<a href="https://wso2.github.io/docs-ballerina-integrator/assets/img/json-to-xml/introduction.png"><img src="https://wso2.github.io/docs-ballerina-integrator/assets/img/json-to-xml/introduction.png" alt="JSON to XML" width="70%"></a></p>
 <h3 id="step-1-create-a-new-integration-project">Step 1: Create a new Integration Project.<a class="headerlink" href="#step-1-create-a-new-integration-project" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Click on the Kola Integrator icon on the sidebar.</li>
