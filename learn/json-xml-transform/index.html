@@ -917,7 +917,7 @@ This documentation is a work in progress.
 <h3 id="step-4-add-the-transformation-logic">Step 4: Add the transformation logic<a class="headerlink" href="#step-4-add-the-transformation-logic" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Click on the <code>toXml</code> resource to navigate to the resource implementation designer view.</li>
-<li>Hover to the arrow after start and click the <code>+</code> button to add a new action to the resource.</li>
+<li>Hover to the arrow after start and click the ➕ button to add a new action to the resource.</li>
 <li>Select <code>Variable</code> from the node panel on the left.</li>
 <li>Change the variable name to <code>xmlData</code>, type as <code>xml | ()</code> and expression to <code>check xmldata:fromJson(input)</code>.
    <a href="https://wso2.github.io/docs-ballerina-integrator/assets/img/json-to-xml/add-variable.png"><img src="https://wso2.github.io/docs-ballerina-integrator/assets/img/json-to-xml/add-variable.png"" alt="Add variable" width="70%"></a></li>
@@ -928,13 +928,13 @@ This documentation is a work in progress.
 </div>
 <h3 id="step-5-error-handling">Step 5: Error handling<a class="headerlink" href="#step-5-error-handling" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Click on the <code>+</code> button again and select <code>If</code> from the node panel.</li>
+<li>Click on the ➕ button again and select <code>If</code> from the node panel.</li>
 <li>Enter the condition as <code>xmlData is xml</code> and press <code>save</code>.
    <a href="https://wso2.github.io/docs-ballerina-integrator/assets/img/json-to-xml/add-if.png"><img src="https://wso2.github.io/docs-ballerina-integrator/assets/img/json-to-xml/add-if.png"" alt="Add If" width="70%"></a></li>
-<li>Click on the <code>If</code> condition true(<code>xmlData is xml</code>)  path <code>+</code> sign and add a <code>Return</code> from the node panel.</li>
+<li>Click on the <code>If</code> condition true(<code>xmlData is xml</code>)  path ➕ sign and add a <code>Return</code> from the node panel.</li>
 <li>Select the <code>xmlData</code> variable from the dropdown and click <code>Save</code>.
    <a href="https://wso2.github.io/docs-ballerina-integrator/assets/img/json-to-xml/add-return.png"><img src="https://wso2.github.io/docs-ballerina-integrator/assets/img/json-to-xml/add-return.png"" alt="Add Return" width="70%"></a></li>
-<li>Click on the <code>If</code> condition <code>Else</code> path <code>+</code> sign and add another <code>Return</code> from the node panel.</li>
+<li>Click on the <code>If</code> condition <code>Else</code> path ➕ sign and add another <code>Return</code> from the node panel.</li>
 <li>Enter <code>http:BadRequest</code> as the value and click <code>Save</code>.
    <a href="https://wso2.github.io/docs-ballerina-integrator/assets/img/json-to-xml/add-else-return.png"><img src="https://wso2.github.io/docs-ballerina-integrator/assets/img/json-to-xml/add-else-return.png"" alt="Add Else Return" width="70%"></a></li>
 <li>The final design will look like below.           <br />
