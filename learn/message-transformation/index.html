@@ -17,7 +17,7 @@
         <link rel="prev" href="../../get-started/key-concepts/">
       
       
-        <link rel="next" href="../../build/jar/">
+        <link rel="next" href="../message-routing/">
       
       <link rel="icon" href="../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
@@ -605,6 +605,20 @@ This documentation is a work in progress.
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../message-routing/" class="md-nav__link">
+        Message Routing
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -852,7 +866,7 @@ This documentation is a work in progress.
 <h1 id="message-transformation-json-to-xml">Message Transformation: JSON to XML<a class="headerlink" href="#message-transformation-json-to-xml" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>This guide explains how to create a simple integration to convert a JSON payload to an XML payload using the Kola. An HTTP service with a single resource (<code>toXml</code>) will be created to accept a JSON payload and return the XML representation of the payload.
-<a href="https://wso2.github.io/docs-kola/assets/img/json-to-xml/introduction.png"><img src="https://wso2.github.io/docs-kola/assets/img/json-to-xml/introduction.png" alt="JSON to XML" width="70%"></a></p>
+<a href="http://localhost:8000/assets/img/json-to-xml/introduction.png"><img src="http://localhost:8000/assets/img/json-to-xml/introduction.png" alt="JSON to XML" width="70%"></a></p>
 <h3 id="step-1-create-a-new-integration-project">Step 1: Create a new Integration Project.<a class="headerlink" href="#step-1-create-a-new-integration-project" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Click on the Kola Integrator icon on the sidebar.</li>
@@ -860,7 +874,7 @@ This documentation is a work in progress.
 <li>Enter the project name as <code>JsonToXml</code>.</li>
 <li>Select Project Directory by clicking on the <strong><code>Select Location</code></strong> button.</li>
 <li>Click on the <strong><code>Create New Integration</code></strong> button to create the integration project.
-   <a href="https://wso2.github.io/docs-kola/assets/img/json-to-xml/create-integration.gif"><img src="https://wso2.github.io/docs-kola/assets/img/json-to-xml/create-integration.gif" alt="Create Integration" width="70%"></a></li>
+   <a href="http://localhost:8000/assets/img/json-to-xml/create-integration.gif"><img src="http://localhost:8000/assets/img/json-to-xml/create-integration.gif" alt="Create Integration" width="70%"></a></li>
 </ol>
 <h3 id="step-2-create-an-integration-service">Step 2: Create an Integration Service.<a class="headerlink" href="#step-2-create-an-integration-service" title="Permanent link">&para;</a></h3>
 <ol>
@@ -880,7 +894,7 @@ This documentation is a work in progress.
 <li>Change the 200 response return type to <code>xml</code>.</li>
 <li>Add a new response of type <strong><code>HttpBadRequest</code></strong> under the responses. </li>
 <li>Click on the <strong><code>Save</code></strong> button to update the resource with the specified configurations.
-    <a href="https://wso2.github.io/docs-kola/assets/img/json-to-xml/update-resource.png"><img src="https://wso2.github.io/docs-kola/assets/img/json-to-xml/update-resource.png" alt="Update Resource" width="70%"></a></li>
+    <a href="http://localhost:8000/assets/img/json-to-xml/update-resource.png"><img src="http://localhost:8000/assets/img/json-to-xml/update-resource.png" alt="Update Resource" width="70%"></a></li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Resource Method</p>
@@ -892,7 +906,7 @@ This documentation is a work in progress.
 <li>Hover to the arrow after start and click the ➕ button to add a new action to the resource.</li>
 <li>Select <strong><code>Variable</code></strong> from the node panel on the left.</li>
 <li>Change the variable name to <code>xmlData</code>, type as <code>xml | ()</code> and expression to <code>check xmldata:fromJson(input)</code>.
-   <a href="https://wso2.github.io/docs-kola/assets/img/json-to-xml/add-variable.png"><img src="https://wso2.github.io/docs-kola/assets/img/json-to-xml/add-variable.png"" alt="Add variable" width="70%"></a></li>
+   <a href="http://localhost:8000/assets/img/json-to-xml/add-variable.png"><img src="http://localhost:8000/assets/img/json-to-xml/add-variable.png"" alt="Add variable" width="70%"></a></li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">JSON to XML Conversion</p>
@@ -902,15 +916,15 @@ This documentation is a work in progress.
 <ol>
 <li>Click on the ➕ button again and select <strong><code>If</code></strong> from the node panel.</li>
 <li>Enter the condition as <code>xmlData is xml</code> and press <strong><code>Save</code></strong>.
-   <a href="https://wso2.github.io/docs-kola/assets/img/json-to-xml/add-if.png"><img src="https://wso2.github.io/docs-kola/assets/img/json-to-xml/add-if.png"" alt="Add If" width="70%"></a></li>
+   <a href="http://localhost:8000/assets/img/json-to-xml/add-if.png"><img src="http://localhost:8000/assets/img/json-to-xml/add-if.png"" alt="Add If" width="70%"></a></li>
 <li>Click on the <code>If</code> condition true(<code>xmlData is xml</code>)  path ➕ sign and add a <strong><code>Return</code></strong> from the node panel.</li>
 <li>Select the <code>xmlData</code> variable from the dropdown and click <strong><code>Save</code></strong>.
-   <a href="https://wso2.github.io/docs-kola/assets/img/json-to-xml/add-return.png"><img src="https://wso2.github.io/docs-kola/assets/img/json-to-xml/add-return.png"" alt="Add Return" width="70%"></a></li>
+   <a href="http://localhost:8000/assets/img/json-to-xml/add-return.png"><img src="http://localhost:8000/assets/img/json-to-xml/add-return.png"" alt="Add Return" width="70%"></a></li>
 <li>Click on the <code>If</code> condition <code>Else</code> path ➕ sign and add another <strong><code>Return</code></strong> from the node panel.</li>
 <li>Enter <code>http:BadRequest</code> as the value and click <strong><code>Save</code></strong>.
-   <a href="https://wso2.github.io/docs-kola/assets/img/json-to-xml/add-else-return.png"><img src="https://wso2.github.io/docs-kola/assets/img/json-to-xml/add-else-return.png"" alt="Add Else Return" width="70%"></a></li>
+   <a href="http://localhost:8000/assets/img/json-to-xml/add-else-return.png"><img src="http://localhost:8000/assets/img/json-to-xml/add-else-return.png"" alt="Add Else Return" width="70%"></a></li>
 <li>The final design will look like below.           <br />
-   <a href="https://wso2.github.io/docs-kola/assets/img/json-to-xml/final-design.png"><img src="https://wso2.github.io/docs-kola/assets/img/json-to-xml/final-design.png"" alt="Final Design" width="70%"></a></li>
+   <a href="http://localhost:8000/assets/img/json-to-xml/final-design.png"><img src="http://localhost:8000/assets/img/json-to-xml/final-design.png"" alt="Final Design" width="70%"></a></li>
 <li>The final code will look like below. The source view can be accessed by clicking on the <code>&lt;/&gt;</code> button in the top right corner.
    <div class="highlight"><pre><span></span><code>import ballerina/http;
 import ballerina/xmldata;
@@ -988,13 +1002,13 @@ service /convert on new http:Listener(9090) {
     
     
     
-    <a href="../../build/jar/" class="md-footer__link md-footer__link--next" aria-label="Next: Build an executable JAR" rel="next">
+    <a href="../message-routing/" class="md-footer__link md-footer__link--next" aria-label="Next: Message Routing" rel="next">
       <div class="md-footer__title">
         <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Next
                 </span>
-          Build an executable JAR
+          Message Routing
         </div>
       </div>
       <div class="md-footer__button md-icon">
