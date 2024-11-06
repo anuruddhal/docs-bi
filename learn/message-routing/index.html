@@ -948,10 +948,10 @@ To accomplish this, you’ll build a REST service with a single resource in Visu
 </li>
 </ol>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p>Download the JAR file for the <a href="https://github.com/ballerina-guides/integration-tutorials/blob/main/backends/hospital-service/hospitalservice.jar">backend service</a> and execute the following command to start the service.</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bal<span class="w"> </span>run<span class="w"> </span>hospitalservice.jar
-</code></pre></div>
-
+<ol>
+<li>Download the JAR file for the <a href="https://github.com/ballerina-guides/integration-tutorials/blob/main/backends/hospital-service/hospitalservice.jar">backend service</a> and execute the following command to start the service.</li>
+<li>Install the latest <a href="https://ballerina.io/learn/getting-started/">Ballerina Swan Lake</a> version.</li>
+</ol>
 <h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h2>
 <p>Follow the steps below to implement the message routing service.</p>
 <h3 id="step-1-create-a-new-integration-project">Step 1: Create a new Integration Project.<a class="headerlink" href="#step-1-create-a-new-integration-project" title="Permanent link">&para;</a></h3>
@@ -1111,11 +1111,10 @@ See supported client configurations in the <a href="https://central.ballerina.io
 </table>
 </li>
 <li>
-<p>Click on the ➕ sign again and select <strong><code>Return</code></strong> from the node panel.</p>
+<p>Click on the ➕ sign again and select <strong><code>Return</code></strong> from the node panel. Select the <code>epReponse</code> variable from the dropdown and click <strong><code>Save</code></strong>.</p>
 </li>
 <li>
-<p>Select the <code>oakEPResponse</code> variable from the dropdown and click <strong><code>Save</code></strong>.
- Repeat the above steps for the <code>clemency</code> and <code>pinevalley</code> hospitals with the following configurations.</p>
+<p>Repeat the 7,8,9 steps for the <code>clemency</code> and <code>pinevalley</code> hospitals with the following configurations.</p>
 <p><strong>clemency:</strong></p>
 <table>
 <thead>
@@ -1203,7 +1202,7 @@ See supported client configurations in the <a href="https://central.ballerina.io
 <span class="s1"> }&#39;</span>
 </code></pre></div></li>
 <li>The response will be similar to the following.
-    <div class="highlight"><span class="filename">ReservationResponse.json</span><pre><span></span><code><span class="p">{</span>
+    <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="nt">&quot;appointmentNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
 <span class="nt">&quot;doctor&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;thomas collins&quot;</span><span class="p">,</span>
