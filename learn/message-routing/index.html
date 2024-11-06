@@ -571,8 +571,8 @@ This documentation is a work in progress.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-set-up-the-project-structure" class="md-nav__link">
-    Step 1: Set up the project structure
+  <a href="#step-1-create-a-new-integration-project" class="md-nav__link">
+    Step 1: Create a new Integration Project.
   </a>
   
 </li>
@@ -580,6 +580,13 @@ This documentation is a work in progress.
           <li class="md-nav__item">
   <a href="#step-2-create-an-integration-service" class="md-nav__link">
     Step 2: Create an Integration Service.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-define-types" class="md-nav__link">
+    Step 3: Define types
   </a>
   
 </li>
@@ -800,8 +807,8 @@ This documentation is a work in progress.
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-set-up-the-project-structure" class="md-nav__link">
-    Step 1: Set up the project structure
+  <a href="#step-1-create-a-new-integration-project" class="md-nav__link">
+    Step 1: Create a new Integration Project.
   </a>
   
 </li>
@@ -809,6 +816,13 @@ This documentation is a work in progress.
           <li class="md-nav__item">
   <a href="#step-2-create-an-integration-service" class="md-nav__link">
     Step 2: Create an Integration Service.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-define-types" class="md-nav__link">
+    Step 3: Define types
   </a>
   
 </li>
@@ -881,7 +895,7 @@ This documentation is a work in progress.
 <p>In this tutorial, you'll create a service that allows users to reserve appointments at various hospitals. Requests will be directed to the appropriate hospital based on the request payload's content.
 To accomplish this, you’ll build a REST service with a single resource in Visual Studio Code using the Ballerina Swan Lake extension. The resource will handle user requests, identify the hospital endpoint based on the hospital ID, forward the request to the specified hospital service to make the reservation, and return the reservation details.</p>
 <p>Here’s an overview of the process flow.</p>
-<p><a href="http://localhost:8000/assets/img/message-routing/introduction.png"><img src="http://localhost:8000/assets/img/message-routing/introduction.png" alt="Message Routing" width="70%"></a></p>
+<p><a href="https://wso2.github.io/docs-kola/assets/img/message-routing/introduction.png"><img src="https://wso2.github.io/docs-kola/assets/img/message-routing/introduction.png" alt="Message Routing" width="70%"></a></p>
 <ol>
 <li>Receive a request with a JSON payload similar to the following.
     <div class="highlight"><span class="filename">ReservationRequest.json</span><pre><span></span><code><span class="p">{</span>
@@ -940,7 +954,14 @@ To accomplish this, you’ll build a REST service with a single resource in Visu
 
 <h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h2>
 <p>Follow the steps below to implement the message routing service.</p>
-<h3 id="step-1-set-up-the-project-structure">Step 1: Set up the project structure<a class="headerlink" href="#step-1-set-up-the-project-structure" title="Permanent link">&para;</a></h3>
+<h3 id="step-1-create-a-new-integration-project">Step 1: Create a new Integration Project.<a class="headerlink" href="#step-1-create-a-new-integration-project" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Click on the Kola Integrator icon on the sidebar.</li>
+<li>Click on the <strong><code>Create New Integration</code></strong> button.</li>
+<li>Enter the project name as <code>MessageRouting</code>.</li>
+<li>Select Project Directory and click on the <strong><code>Select Location</code></strong> button.</li>
+<li>Click on the <strong><code>Create New Integration</code></strong> button to create the integration project.</li>
+</ol>
 <h3 id="step-2-create-an-integration-service">Step 2: Create an Integration Service.<a class="headerlink" href="#step-2-create-an-integration-service" title="Permanent link">&para;</a></h3>
 <ol>
 <li>In the design view, click on the <strong><code>Add Construct</code></strong> button.</li>
@@ -950,13 +971,43 @@ To accomplish this, you’ll build a REST service with a single resource in Visu
 <li>Enter the service name as <code>HealthCare</code>, path as <code>/healthcare</code>, and <code>8290</code> as the port.</li>
 <li>Click on the <strong><code>Create Service</code></strong> button to create the new service with the specified configurations.</li>
 </ol>
+<h3 id="step-3-define-types">Step 3: Define types<a class="headerlink" href="#step-3-define-types" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Click on the <strong><code>Add Construct</code></strong> button and select <strong><code>Type</code></strong>.</li>
+<li>Select <strong><code>Import a JSON</code></strong> from the Type dropdown.</li>
+<li>Generate record types corresponding to the response from the hospital backend service by providing a sample of the expected JSON payload.
+    <div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;appointmentNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;doctor&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;thomas collins&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;hospital&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;grand oak community hospital&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;category&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;surgery&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;availability&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9.00 a.m - 11.00 a.m&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;fee&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">7000.0</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;patient&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;dob&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1940-03-19&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ssn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;234-23-525&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;California&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;phone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8770586755&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;johndoe@gmail.com&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;hospital&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;grand oak community hospital&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;confirmed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;appointmentDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-10-02&quot;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>Click on the <strong><code>Create Type</code></strong> button to create the new type with the specified configurations.
+<a href="https://wso2.github.io/docs-kola/assets/img/message-routing/types.png"><img src="https://wso2.github.io/docs-kola/assets/img/message-routing/types.png" alt="Create Type" width="70%"></a></li>
+</ol>
 <h3 id="step-3-add-connectors">Step 3: Add connectors<a class="headerlink" href="#step-3-add-connectors" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Navigate to design view and click on the <strong><code>Add Connector</code></strong> button.</li>
 <li>Search and select the <strong><code>HTTP</code></strong> connector.</li>
 <li>Enter the connector name as <code>grandOakEP</code>, URL as <code>http://localhost:9090/grandoak/categories</code>, and config as <code>{}</code>.</li>
 <li>Click on the <strong><code>Create Connector</code></strong> button to create the new connector with the specified configurations.
-<a href="http://localhost:8000/assets/img/message-routing/add-connector.gif"><img src="http://localhost:8000/assets/img/message-routing/add-connector.gif" alt="Add Connector" width="70%"></a></li>
+<a href="https://wso2.github.io/docs-kola/assets/img/message-routing/add-connector.gif"><img src="https://wso2.github.io/docs-kola/assets/img/message-routing/add-connector.gif" alt="Add Connector" width="70%"></a></li>
 <li>
 <p>Repeat the above steps to add connectors for the <code>clemency</code> and <code>pinevalley</code> hospitals with the following configurations.</p>
 <table>
@@ -988,7 +1039,7 @@ To accomplish this, you’ll build a REST service with a single resource in Visu
 </li>
 <li>
 <p>The final connectors will look like below.   <br />
-<a href="http://localhost:8000/assets/img/message-routing/connectors.png"><img src="http://localhost:8000/assets/img/message-routing/connectors.png" alt="Connectors" width="70%"></a></p>
+<a href="https://wso2.github.io/docs-kola/assets/img/message-routing/connectors.png"><img src="https://wso2.github.io/docs-kola/assets/img/message-routing/connectors.png" alt="Connectors" width="70%"></a></p>
 </li>
 </ol>
 <details class="info"><summary>HTTP Connector</summary><p>To learn more about HTTP client, see <a href="https://ballerina.io/learn/by-example/http-client-send-request-receive-response/">Ballerina HTTP Client</a>.
@@ -1004,7 +1055,7 @@ See supported client configurations in the <a href="https://central.ballerina.io
 <li>Change the 201 response return type to <code>ReservationResponse</code>.</li>
 <li>Add a new response of type <strong><code>HttpNotFound</code></strong> under the responses.</li>
 <li>Click on the <strong><code>Save</code></strong> button to update the resource with the specified configurations.
-   <a href="http://localhost:8000/assets/img/message-routing/update-resource.png"><img src="http://localhost:8000/assets/img/message-routing/update-resource.png" alt="Update Resource" width="70%"></a></li>
+   <a href="https://wso2.github.io/docs-kola/assets/img/message-routing/update-resource.png"><img src="https://wso2.github.io/docs-kola/assets/img/message-routing/update-resource.png" alt="Update Resource" width="70%"></a></li>
 </ol>
 <h3 id="step-4-add-the-routing-logic">Step 4: Add the routing logic<a class="headerlink" href="#step-4-add-the-routing-logic" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1025,11 +1076,11 @@ See supported client configurations in the <a href="https://central.ballerina.io
 <li>grandOak -&gt; <code>reservation.hospital_id == "grandoak"</code></li>
 <li>clemency -&gt; <code>reservation.hospital_id == "clemency"</code></li>
 <li>pineValley -&gt; <code>reservation.hospital_id == "pinevalley"</code>
-   <a href="http://localhost:8000/assets/img/message-routing/add-if.png"><img src="http://localhost:8000/assets/img/message-routing/add-if.png"" alt="Add If" width="70%"></a></li>
+   <a href="https://wso2.github.io/docs-kola/assets/img/message-routing/add-if.png"><img src="https://wso2.github.io/docs-kola/assets/img/message-routing/add-if.png"" alt="Add If" width="70%"></a></li>
 </ul>
 </li>
 <li>Select the <code>grandOakEP</code> condition true path ➕ sign and select <strong><code>grandOakEP</code></strong> connector from the node panel.
-<a href="http://localhost:8000/assets/img/message-routing/add-connector-action.png"><img src="http://localhost:8000/assets/img/message-routing/add-connector-action.png" alt="Add Connector Action" width="70%"></a></li>
+<a href="https://wso2.github.io/docs-kola/assets/img/message-routing/add-connector-action.png"><img src="https://wso2.github.io/docs-kola/assets/img/message-routing/add-connector-action.png" alt="Add Connector Action" width="70%"></a></li>
 <li>
 <p>Select <strong><code>Post</code></strong> from the dropdown. Then fill the required fields with values given below and click <strong><code>Save</code></strong>.</p>
 <table>
@@ -1124,7 +1175,7 @@ See supported client configurations in the <a href="https://central.ballerina.io
 <p>For the else condition, click on the <code>If</code> condition <code>Else</code> path ➕ sign and add a <strong><code>Return</code></strong> from the node panel. Enter <code>http:NOT_FOUND</code> as the value and click <strong><code>Save</code></strong>.             </p>
 </li>
 <li>The final design will look like below.           <br />
-    <a href="http://localhost:8000/assets/img/message-routing/final-design.png"><img src="http://localhost:8000/assets/img/message-routing/final-design.png"" alt="Final Design" width="70%"></a></li>
+    <a href="https://wso2.github.io/docs-kola/assets/img/message-routing/final-design.png"><img src="https://wso2.github.io/docs-kola/assets/img/message-routing/final-design.png"" alt="Final Design" width="70%"></a></li>
 </ol>
 <h3 id="step-5-run-the-service">Step 5: Run the service<a class="headerlink" href="#step-5-run-the-service" title="Permanent link">&para;</a></h3>
 <ol>
