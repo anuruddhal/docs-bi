@@ -586,14 +586,14 @@ This documentation is a work in progress.
         
           <li class="md-nav__item">
   <a href="#step-1-create-a-new-integration-project" class="md-nav__link">
-    Step 1: Create a new Integration Project.
+    Step 1: Create a new integration project.
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#step-2-create-a-http-service" class="md-nav__link">
-    Step 2: Create a HTTP Service.
+    Step 2: Create a HTTP service.
   </a>
   
 </li>
@@ -822,14 +822,14 @@ This documentation is a work in progress.
         
           <li class="md-nav__item">
   <a href="#step-1-create-a-new-integration-project" class="md-nav__link">
-    Step 1: Create a new Integration Project.
+    Step 1: Create a new integration project.
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#step-2-create-a-http-service" class="md-nav__link">
-    Step 2: Create a HTTP Service.
+    Step 2: Create a HTTP service.
   </a>
   
 </li>
@@ -905,7 +905,7 @@ This documentation is a work in progress.
   
 
 
-<h1 id="service-orchestration">Service Orchestration<a class="headerlink" href="#service-orchestration" title="Permanent link">&para;</a></h1>
+<h1 id="service-orchestration">Service orchestration<a class="headerlink" href="#service-orchestration" title="Permanent link">&para;</a></h1>
 <p>In this tutorial, you’ll create a service to process appointment requests for hospitals. The service will call multiple backend services sequentially, using data from each call to inform the next. This approach integrates several services into one, known as service orchestration.
 To implement this, you’ll build a REST service with a single resource in Kola extension and then run the service. The resource will receive user requests, make the necessary backend calls, and respond with the appointment details.</p>
 <p>The flow is as follows.</p>
@@ -913,8 +913,8 @@ To implement this, you’ll build a REST service with a single resource in Kola 
 <li>The user sends an appointment request to the service.
     <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;patient&quot;</span><span class="p">:{</span>
-<span class="w">       </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
-<span class="w">       </span><span class="nt">&quot;dob&quot;</span><span class="p">:</span><span class="s2">&quot;1940-03-19&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;dob&quot;</span><span class="p">:</span><span class="s2">&quot;1940-03-19&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;ssn&quot;</span><span class="p">:</span><span class="s2">&quot;234-23-525&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="s2">&quot;California&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;phone&quot;</span><span class="p">:</span><span class="s2">&quot;8770586755&quot;</span><span class="p">,</span>
@@ -936,7 +936,7 @@ To implement this, you’ll build a REST service with a single resource in Kola 
 <span class="w">      </span><span class="nt">&quot;category&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;surgery&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;availability&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9.00 a.m - 11.00 a.m&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;fee&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">7000</span>
-<span class="w">    </span><span class="p">},</span>
+<span class="w">   </span><span class="p">},</span>
 <span class="w">   </span><span class="nt">&quot;patient&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;dob&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1940-03-19&quot;</span><span class="p">,</span>
@@ -977,7 +977,7 @@ To implement this, you’ll build a REST service with a single resource in Kola 
 </ol>
 <h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h2>
 <p>Follow the steps below to implement the service orchestration.</p>
-<h3 id="step-1-create-a-new-integration-project">Step 1: Create a new Integration Project.<a class="headerlink" href="#step-1-create-a-new-integration-project" title="Permanent link">&para;</a></h3>
+<h3 id="step-1-create-a-new-integration-project">Step 1: Create a new integration project.<a class="headerlink" href="#step-1-create-a-new-integration-project" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Click on the Kola Integrator icon on the sidebar.</li>
 <li>Click on the <strong><code>Create New Integration</code></strong> button.</li>
@@ -986,7 +986,7 @@ To implement this, you’ll build a REST service with a single resource in Kola 
 <li>Click on the <strong><code>Create New Integration</code></strong> button to create the integration project.
     <a href="https://wso2.github.io/docs-kola/assets/img/service-orchestration/create-integration.png"><img src="https://wso2.github.io/docs-kola/assets/img/service-orchestration/create-integration.png" alt="Create Integration" width="70%"></a></li>
 </ol>
-<h3 id="step-2-create-a-http-service">Step 2: Create a HTTP Service.<a class="headerlink" href="#step-2-create-a-http-service" title="Permanent link">&para;</a></h3>
+<h3 id="step-2-create-a-http-service">Step 2: Create a HTTP service.<a class="headerlink" href="#step-2-create-a-http-service" title="Permanent link">&para;</a></h3>
 <ol>
 <li>In the design view, click on the <strong><code>Add Construct</code></strong> button.</li>
 <li>Select <strong><code>Service</code></strong> from the menu.</li>
@@ -1040,7 +1040,7 @@ See supported client configurations in the <a href="https://central.ballerina.io
 <h3 id="step-5-design-the-resource">Step 5: Design the resource<a class="headerlink" href="#step-5-design-the-resource" title="Permanent link">&para;</a></h3>
 <ol>
 <li>The service will be generated with a default resource named <code>greeting</code>. Click on the service to view and update the resource details.</li>
-<li>Click on three dots appear in front of the <code>greeting</code> resource and select edit to view and update the resource details.</li>
+<li>Click on three dots that appear in front of the <code>greeting</code> resource and select edit to view and update the resource details.</li>
 <li>Define an HTTP resource that allows the <strong><code>POST</code></strong> operation on the resource path <code>categories/[string category]/reserve</code> and accepts the category path parameter (corresponding to the specialization). </li>
 <li>Add <strong><code>ReservationRequest</code></strong> as a parameter indicating that the resource expects a <code>JSON</code> object corresponding to <strong><code>ReservationRequest</code></strong> as the payload. </li>
 <li>Add <code>ReservationStatus</code>, <code>http:NotFound</code>, and <code>http:InternalServerError</code> as the response types.
@@ -1072,7 +1072,7 @@ See supported client configurations in the <a href="https://central.ballerina.io
 <a href="https://wso2.github.io/docs-kola/assets/img/service-orchestration/variable.png"><img src="https://wso2.github.io/docs-kola/assets/img/service-orchestration/variable.png" alt="Variable" width="70%"></a></li>
 <li>Click ➕ sign and select <strong><code>hospitalServicesEP</code></strong> connector from the node panel.</li>
 <li>
-<p>Select <strong><code>post</code></strong> from the dropdown. Then fill the required fields with values given below and click <strong><code>Save</code></strong>.</p>
+<p>Select <strong><code>post</code></strong> from the dropdown. Then, fill in the required fields with the values given below and click <strong><code>Save</code></strong>.</p>
 <table>
 <thead>
 <tr>
@@ -1105,7 +1105,7 @@ See supported client configurations in the <a href="https://central.ballerina.io
 8. Click on the ➕ sign and select <strong><code>Variable</code></strong> from the node panel. Add a variable named <code>appointmentNumber</code> with the type <strong><code>int</code></strong> and expression <code>appointment.appointmentNumber</code>.<br />
 <a href="https://wso2.github.io/docs-kola/assets/img/service-orchestration/appointment.png"><img src="https://wso2.github.io/docs-kola/assets/img/service-orchestration/appointment.png" alt="Appointment Number" width="70%"></a> <br />
 9. Let's add another connector to get the fee for the appointment. Click on the ➕ sign and select <strong><code>hospitalServicesEP</code></strong> connector from the node panel.<br />
-10. Select <strong><code>get</code></strong> from the dropdown. Then fill the required fields with values given below and click <strong><code>Save</code></strong>.</p>
+10. Select <strong><code>get</code></strong> from the dropdown. Then, fill in the required fields with the values given below and click <strong><code>Save</code></strong>.</p>
 <table>
 <thead>
 <tr>
@@ -1129,7 +1129,7 @@ See supported client configurations in the <a href="https://central.ballerina.io
 </tbody>
 </table>
 <p><a href="https://wso2.github.io/docs-kola/assets/img/service-orchestration/fee.png"><img src="https://wso2.github.io/docs-kola/assets/img/service-orchestration/fee.png" alt="Hospital Service Request" width="70%"></a><br />
-11. Click on the ➕ sign and select <strong><code>Variable</code></strong> from the node panel. Add a variable named <code>actualFee</code> with the type <strong><code>dobule</code></strong> and expression <code>decimal:fromString(fee.actualFee)</code>.
+11. Click on the ➕ sign and select <strong><code>Variable</code></strong> from the node panel. Add a variable named <code>actualFee</code> with the type <strong><code>decimal</code></strong> and expression <code>decimal:fromString(fee.actualFee)</code>.
 12. Create another new to prepare the payment request. Click on the ➕ sign and select <strong><code>Variable</code></strong> from the node panel. Add a variable named <code>paymentRequest</code> with the type <strong><code>json</code></strong> and expression as follows.
     <div class="highlight"><pre><span></span><code>{
     appointmentNumber: appointmentNumber,
@@ -1142,7 +1142,7 @@ See supported client configurations in the <a href="https://central.ballerina.io
 </code></pre></div>
    <a href="https://wso2.github.io/docs-kola/assets/img/service-orchestration/payment-request.png"><img src="https://wso2.github.io/docs-kola/assets/img/service-orchestration/payment-request.png" alt="Payment Request" width="70%"></a><br />
 13. Let's add another connector action to make the payment. Click on the ➕ sign and select <strong><code>paymentEP</code></strong> connector from the node panel. <br />
-14. Select <strong><code>post</code></strong> from the dropdown. Then fill the required fields with values given below and click <strong><code>Save</code></strong>.</p>
+14. Select <strong><code>post</code></strong> from the dropdown. Then, fill in the required fields with the values given below and click <strong><code>Save</code></strong>.</p>
 <table>
 <thead>
 <tr>
@@ -1184,18 +1184,18 @@ See supported client configurations in the <a href="https://central.ballerina.io
 <span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
 <span class="s1"> &quot;patient&quot;: {</span>
-<span class="s1"> &quot;name&quot;: &quot;John Doe&quot;,</span>
-<span class="s1"> &quot;dob&quot;: &quot;1940-03-19&quot;,</span>
-<span class="s1"> &quot;ssn&quot;: &quot;234-23-525&quot;,</span>
-<span class="s1"> &quot;address&quot;: &quot;California&quot;,</span>
-<span class="s1"> &quot;phone&quot;: &quot;8770586755&quot;,</span>
-<span class="s1"> &quot;email&quot;: &quot;johndoe@gmail.com&quot;,</span>
-<span class="s1">  &quot;cardNo&quot;: &quot;7844481124110331&quot;</span>
-<span class="s1"> },</span>
-<span class="s1"> &quot;doctor&quot;: &quot;thomas collins&quot;,</span>
-<span class="s1"> &quot;hospital_id&quot;: &quot;grandoak&quot;,</span>
-<span class="s1"> &quot;hospital&quot;: &quot;grand oak community hospital&quot;,</span>
-<span class="s1"> &quot;appointment_date&quot;: &quot;2023-10-02&quot;</span>
+<span class="s1">   &quot;name&quot;: &quot;John Doe&quot;,</span>
+<span class="s1">   &quot;dob&quot;: &quot;1940-03-19&quot;,</span>
+<span class="s1">   &quot;ssn&quot;: &quot;234-23-525&quot;,</span>
+<span class="s1">   &quot;address&quot;: &quot;California&quot;,</span>
+<span class="s1">   &quot;phone&quot;: &quot;8770586755&quot;,</span>
+<span class="s1">   &quot;email&quot;: &quot;johndoe@gmail.com&quot;,</span>
+<span class="s1">   &quot;cardNo&quot;: &quot;7844481124110331&quot;</span>
+<span class="s1">  },</span>
+<span class="s1">  &quot;doctor&quot;: &quot;thomas collins&quot;,</span>
+<span class="s1">  &quot;hospital_id&quot;: &quot;grandoak&quot;,</span>
+<span class="s1">  &quot;hospital&quot;: &quot;grand oak community hospital&quot;,</span>
+<span class="s1">  &quot;appointment_date&quot;: &quot;2023-10-02&quot;</span>
 <span class="s1"> }&#39;</span>
 </code></pre></div></li>
 <li>The response will be similar to the following.
