@@ -1012,7 +1012,7 @@ To implement this, you’ll build a REST service with a single resource in Kola 
 <li>Enter the project name as <code>ServiceOrchestration</code>.</li>
 <li>Select project directory location by clicking on the <strong><code>Select Location</code></strong> button.</li>
 <li>Click on the <strong><code>Create New Integration</code></strong> button to create the integration project.
-    <a href="https://wso2.github.io/docs-kola/assets/img/service-orchestration/create-integration.png"><img src="https://wso2.github.io/docs-kola/assets/img/service-orchestration/create-integration.png" alt="Create Integration" width="70%"></a></li>
+    <a href="http://localhost:8000/assets/img/service-orchestration/create-integration.png"><img src="http://localhost:8000/assets/img/service-orchestration/create-integration.png" alt="Create Integration" width="70%"></a></li>
 </ol>
 <h3 id="step-2-create-a-http-service">Step 2: Create a HTTP service.<a class="headerlink" href="#step-2-create-a-http-service" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1051,16 +1051,16 @@ To implement this, you’ll build a REST service with a single resource in Kola 
 <span class="p">}</span>
 </code></pre></div></li>
 <li>Click on the <strong><code>Create Type</code></strong> button to create the new type with the specified configurations.
-   <a href="https://wso2.github.io/docs-kola/assets/img/message-routing/types.png"><img src="https://wso2.github.io/docs-kola/assets/img/message-routing/types.png" alt="Create Type" width="70%"></a></li>
+   <a href="http://localhost:8000/assets/img/message-routing/types.png"><img src="http://localhost:8000/assets/img/message-routing/types.png" alt="Create Type" width="70%"></a></li>
 </ol>
 <h3 id="step-4-add-connectors">Step 4: Add connectors<a class="headerlink" href="#step-4-add-connectors" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Navigate to design view and click on the <strong><code>Add Connector</code></strong> button.</li>
 <li>Search and select the <strong><code>HTTP</code></strong> connector.</li>
 <li>Enter the connector name as <code>hospitalServicesEP</code>, URL as <code>http://localhost:9090</code>, and config as <code>{}</code>.
-<a href="https://wso2.github.io/docs-kola/assets/img/service-orchestration/add-connector.gif"><img src="https://wso2.github.io/docs-kola/assets/img/service-orchestration/add-connector.gif" alt="Add Connector" width="70%"></a></li>
+<a href="http://localhost:8000/assets/img/service-orchestration/add-connector.gif"><img src="http://localhost:8000/assets/img/service-orchestration/add-connector.gif" alt="Add Connector" width="70%"></a></li>
 <li>Add another connector for the payment backend service with the URL <code>http://localhost:9090/healthcare/payments</code> and the name <code>paymentEP</code>, and config as <code>{}</code>.  <br />
-<a href="https://wso2.github.io/docs-kola/assets/img/service-orchestration/connectors.png"><img src="https://wso2.github.io/docs-kola/assets/img/service-orchestration/connectors.png" alt="Connectors" width="70%"></a></li>
+<a href="http://localhost:8000/assets/img/service-orchestration/connectors.png"><img src="http://localhost:8000/assets/img/service-orchestration/connectors.png" alt="Connectors" width="70%"></a></li>
 </ol>
 <details class="info" open="open"><summary>HTTP Connector</summary><p>To learn more about HTTP client, see <a href="https://ballerina.io/learn/by-example/http-client-send-request-receive-response/">Ballerina HTTP Client</a>.
 See supported client configurations in the <a href="https://central.ballerina.io/ballerina/http/2.12.2#ClientConfiguration">HTTP Client Configurations</a>.</p>
@@ -1072,9 +1072,9 @@ See supported client configurations in the <a href="https://central.ballerina.io
 <li>Define an HTTP resource that allows the <strong><code>POST</code></strong> operation on the resource path <code>categories/[string category]/reserve</code> and accepts the category path parameter (corresponding to the specialization). </li>
 <li>Add <strong><code>ReservationRequest</code></strong> as a parameter indicating that the resource expects a <code>JSON</code> object corresponding to <strong><code>ReservationRequest</code></strong> as the payload. </li>
 <li>Add <code>ReservationStatus</code>, <code>http:NotFound</code>, and <code>http:InternalServerError</code> as the response types.
-   <a href="https://wso2.github.io/docs-kola/assets/img/service-orchestration/resource.gif"><img src="https://wso2.github.io/docs-kola/assets/img/service-orchestration/resource.gif" alt="Resource" width="70%"></a></li>
+   <a href="http://localhost:8000/assets/img/service-orchestration/resource.gif"><img src="http://localhost:8000/assets/img/service-orchestration/resource.gif" alt="Resource" width="70%"></a></li>
 <li>Click on the <strong><code>Save</code></strong> button to save the resource. <br />
-   <a href="https://wso2.github.io/docs-kola/assets/img/service-orchestration/resource-edit.png"><img src="https://wso2.github.io/docs-kola/assets/img/service-orchestration/resource-edit.png" alt="Resource" width="70%"></a></li>
+   <a href="http://localhost:8000/assets/img/service-orchestration/resource-edit.png"><img src="http://localhost:8000/assets/img/service-orchestration/resource-edit.png" alt="Resource" width="70%"></a></li>
 </ol>
 <h3 id="step-6-implement-the-orchestration-logic">Step 6: Implement the orchestration logic<a class="headerlink" href="#step-6-implement-the-orchestration-logic" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1097,7 +1097,7 @@ See supported client configurations in the <a href="https://central.ballerina.io
     }
 </code></pre></div></li>
 <li>Click on the <strong><code>Save</code></strong> button to add the variable. <br />
-<a href="https://wso2.github.io/docs-kola/assets/img/service-orchestration/variable.png"><img src="https://wso2.github.io/docs-kola/assets/img/service-orchestration/variable.png" alt="Variable" width="70%"></a></li>
+<a href="http://localhost:8000/assets/img/service-orchestration/variable.png"><img src="http://localhost:8000/assets/img/service-orchestration/variable.png" alt="Variable" width="70%"></a></li>
 <li>Click ➕ sign and select <strong><code>hospitalServicesEP</code></strong> connector from the node panel.</li>
 <li>
 <p>Select <strong><code>post</code></strong> from the dropdown. Then, fill in the required fields with the values given below and click <strong><code>Save</code></strong>.</p>
@@ -1129,9 +1129,9 @@ See supported client configurations in the <a href="https://central.ballerina.io
 </table>
 </li>
 </ol>
-<p><a href="https://wso2.github.io/docs-kola/assets/img/service-orchestration/post-request.png"><img src="https://wso2.github.io/docs-kola/assets/img/service-orchestration/post-request.png" alt="Hospital Service Request" width="70%"></a> <br />
+<p><a href="http://localhost:8000/assets/img/service-orchestration/post-request.png"><img src="http://localhost:8000/assets/img/service-orchestration/post-request.png" alt="Hospital Service Request" width="70%"></a> <br />
 8. Click on the ➕ sign and select <strong><code>Variable</code></strong> from the node panel. Add a variable named <code>appointmentNumber</code> with the type <strong><code>int</code></strong> and expression <code>appointment.appointmentNumber</code>.<br />
-<a href="https://wso2.github.io/docs-kola/assets/img/service-orchestration/appointment.png"><img src="https://wso2.github.io/docs-kola/assets/img/service-orchestration/appointment.png" alt="Appointment Number" width="70%"></a> <br />
+<a href="http://localhost:8000/assets/img/service-orchestration/appointment.png"><img src="http://localhost:8000/assets/img/service-orchestration/appointment.png" alt="Appointment Number" width="70%"></a> <br />
 9. Let's add another connector to get the fee for the appointment. Click on the ➕ sign and select <strong><code>hospitalServicesEP</code></strong> connector from the node panel.<br />
 10. Select <strong><code>get</code></strong> from the dropdown. Then, fill in the required fields with the values given below and click <strong><code>Save</code></strong>.</p>
 <table>
@@ -1156,7 +1156,7 @@ See supported client configurations in the <a href="https://central.ballerina.io
 </tr>
 </tbody>
 </table>
-<p><a href="https://wso2.github.io/docs-kola/assets/img/service-orchestration/fee.png"><img src="https://wso2.github.io/docs-kola/assets/img/service-orchestration/fee.png" alt="Hospital Service Request" width="70%"></a><br />
+<p><a href="http://localhost:8000/assets/img/service-orchestration/fee.png"><img src="http://localhost:8000/assets/img/service-orchestration/fee.png" alt="Hospital Service Request" width="70%"></a><br />
 11. Click on the ➕ sign and select <strong><code>Variable</code></strong> from the node panel. Add a variable named <code>actualFee</code> with the type <strong><code>decimal</code></strong> and expression <code>decimal:fromString(fee.actualFee)</code>.
 12. Create another new to prepare the payment request. Click on the ➕ sign and select <strong><code>Variable</code></strong> from the node panel. Add a variable named <code>paymentRequest</code> with the type <strong><code>json</code></strong> and expression as follows.
     <div class="highlight"><pre><span></span><code>{
@@ -1168,7 +1168,7 @@ See supported client configurations in the <a href="https://central.ballerina.io
     card_number: reservation.patient.cardNo
 }
 </code></pre></div>
-   <a href="https://wso2.github.io/docs-kola/assets/img/service-orchestration/payment-request.png"><img src="https://wso2.github.io/docs-kola/assets/img/service-orchestration/payment-request.png" alt="Payment Request" width="70%"></a><br />
+   <a href="http://localhost:8000/assets/img/service-orchestration/payment-request.png"><img src="http://localhost:8000/assets/img/service-orchestration/payment-request.png" alt="Payment Request" width="70%"></a><br />
 13. Let's add another connector action to make the payment. Click on the ➕ sign and select <strong><code>paymentEP</code></strong> connector from the node panel. <br />
 14. Select <strong><code>post</code></strong> from the dropdown. Then, fill in the required fields with the values given below and click <strong><code>Save</code></strong>.</p>
 <table>
@@ -1197,7 +1197,7 @@ See supported client configurations in the <a href="https://central.ballerina.io
 </tr>
 </tbody>
 </table>
-<p><a href="https://wso2.github.io/docs-kola/assets/img/service-orchestration/payment.png"><img src="https://wso2.github.io/docs-kola/assets/img/service-orchestration/payment.png" alt="Payment" width="70%"></a><br />
+<p><a href="http://localhost:8000/assets/img/service-orchestration/payment.png"><img src="http://localhost:8000/assets/img/service-orchestration/payment.png" alt="Payment" width="70%"></a><br />
 15. Click on the ➕ sign and select <strong><code>Return</code></strong> from the node panel. Add the <code>status</code> variable to the return node.</p>
 <h3 id="step-7-run-the-service">Step 7: Run the service<a class="headerlink" href="#step-7-run-the-service" title="Permanent link">&para;</a></h3>
 <ol>
