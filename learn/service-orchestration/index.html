@@ -1030,43 +1030,50 @@ To implement this, you’ll build a REST service with a single resource in Balle
 <h3 id="step-2-create-a-http-service">Step 2: Create a HTTP service.<a class="headerlink" href="#step-2-create-a-http-service" title="Permanent link">&para;</a></h3>
 <ol>
 <li>In the design view, click on the <strong><code>Add Construct</code></strong> button.</li>
-<li>Select <strong><code>Service</code></strong> from the menu.</li>
 <li>Select <strong><code>HTTP Service</code></strong> from the Service Type dropdown.</li>
-<li>Select <strong><code>Design From Scratch</code></strong> option.</li>
-<li>Enter the service name as <code>HealthCare</code>, path as <code>/healthcare</code>, and <code>8290</code> as the port.</li>
+<li>Select the <strong><code>+Listner</code></strong> button to create a new listener.</li>
+<li>Enter the service <strong><code>Name</code></strong> as <code>healthcareService</code> and the <strong><code>Port</code></strong> as <code>8290</code>.</li>
+<li>Select <strong><code>Design from Scratch</code></strong> option as the <strong><code>The contract of the service</code></strong>.</li>
+<li>Enter the <strong><code>Service base path</code></strong> as  <code>/healthcare</code>, and <code>8290</code> as the port.</li>
 <li>Click on the <strong><code>Add Service</code></strong> button.</li>
 </ol>
 <h3 id="step-3-define-types">Step 3: Define types<a class="headerlink" href="#step-3-define-types" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Click on the <strong><code>Add Construct</code></strong> button and select <strong><code>Type</code></strong>.</li>
-<li>Select <strong><code>Import a JSON</code></strong> from the Type dropdown.</li>
+<li>Navigate to the design view and click on the <strong><code>Add Construct</code></strong> button.</li>
+<li>Click on <strong><code>Types</code></strong> to add types.</li>
 <li>
-<p>Generate record types corresponding to the response from the hospital backend service by providing a sample of the expected JSON payload. The values are given below.</p>
+<p>Click on <strong><code>+Add Type</code></strong> to add a new type.
+ Generate record types corresponding to the response from the hospital backend service by providing a sample of the expected JSON payload. The values are given below.</p>
 <table>
 <thead>
 <tr>
-<th>Record Name</th>
+<th>Type</th>
+<th>Name</th>
 <th>Sample JSON value</th>
 <th>Make Separate Record Definition</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>Record</td>
 <td>ReservationRequest</td>
 <td><code>{"patient":{"name":"John Doe","dob":"1940-03-19","ssn":"234-23-525","address":"California","phone":"8770586755","email":"johndoe@gmail.com","cardNo":"7844481124110331"},"doctor":"thomas collins","hospital_id":"grandoaks","hospital":"grand oak community hospital","appointment_date":"2024-11-06"}</code></td>
 <td>☑️</td>
 </tr>
 <tr>
+<td>Record</td>
 <td>ReservationStatus</td>
 <td><code>{"appointmentNo":1, "doctorName":"thomas collins", "patient":"John Doe", "actualFee":7000.0, "discount":20, "discounted":5600.0, "paymentID":"e560ea82-1c42-4972-a471-af5c1ad4995f", "status":"settled"}</code></td>
 <td>☑️</td>
 </tr>
 <tr>
+<td>Record</td>
 <td>Appointment</td>
 <td><code>{"appointmentNumber":12345,"doctor":{"name":"Dr. Alice Carter","hospital":"Green Valley Hospital","category":"Cardiology","availability":"Mon-Fri, 9 AM - 5 PM","fee":200},"patientName":"Emma Johnson","hospital":"Green Valley Hospital","confirmed":true,"appointmentDate":"2024-11-20T10:00:00"}</code></td>
 <td>☑️</td>
 </tr>
 <tr>
+<td>Record</td>
 <td>Fee</td>
 <td><code>{"patientName":"Emma Johnson","doctorName":"Dr. Alice Carter","actualFee":"150.00"}</code></td>
 <td></td>
