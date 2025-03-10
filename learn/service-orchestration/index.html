@@ -954,20 +954,20 @@ To implement this, you’ll build a REST service with a single resource in Balle
 <ol>
 <li>The user sends an appointment request to the service.
     <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;patient&quot;</span><span class="p">:{</span>
-<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;dob&quot;</span><span class="p">:</span><span class="s2">&quot;1940-03-19&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;ssn&quot;</span><span class="p">:</span><span class="s2">&quot;234-23-525&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="s2">&quot;California&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;phone&quot;</span><span class="p">:</span><span class="s2">&quot;8770586755&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="s2">&quot;johndoe@gmail.com&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;cardNo&quot;</span><span class="p">:</span><span class="s2">&quot;7844481124110331&quot;</span>
+<span class="w">    </span><span class="nt">&quot;patient&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;dob&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1940-03-19&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ssn&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;234-23-525&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;California&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;phone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8770586755&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;johndoe@gmail.com&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;cardNo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7844481124110331&quot;</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;doctor&quot;</span><span class="p">:</span><span class="s2">&quot;thomas collins&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;hospital_id&quot;</span><span class="p">:</span><span class="s2">&quot;grandoaks&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;hospital&quot;</span><span class="p">:</span><span class="s2">&quot;grand oak community hospital&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;appointment_date&quot;</span><span class="p">:</span><span class="s2">&quot;2024-11-06&quot;</span>
-<span class="w">   </span><span class="p">}</span>
+<span class="w">    </span><span class="nt">&quot;doctor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;thomas collins&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;hospital_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;grandoaks&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;hospital&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;grand oak community hospital&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;appointment_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-11-06&quot;</span>
+<span class="w">  </span><span class="p">}</span>
 </code></pre></div></li>
 <li>Extract necessary details from the request (e.g., hospital, patient, doctor, etc.) and make a call to the hospital backend service to request an appointment. A response similar to the following will be returned from the hospital backend service on success. 
     <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p">{</span>
