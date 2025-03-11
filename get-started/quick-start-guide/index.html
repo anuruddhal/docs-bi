@@ -997,22 +997,48 @@ Press <code>Ctrl + Shift + P</code> on Windows and Linux, or <code>shift + ⌘ +
 <li>Search for <code>HTTP</code> in the search bar and select <strong><code>HTTP</code></strong> as the connection type.</li>
 <li>Change the variable name to <code>externalEP</code>.</li>
 <li>
-<p>Add the URL <code>https://apis.wso2.com</code> to the connection URL field and click <strong><code>Save</code></strong>.
+<p>Add the URL <code>"https://apis.wso2.com"</code> to the connection URL field and click <strong><code>Save</code></strong>.
    <a href="https://wso2.github.io/docs-bi/assets/img/get-started/create-connection.gif"><img src="https://wso2.github.io/docs-bi/assets/img/get-started/create-connection.gif" alt="Create New Connection" width="70%"></a></p>
 </li>
 <li>
 <p>Click the ➕ button again and select <strong><code>Connections</code> -&gt; <code>externalEP</code> -&gt; <code>get</code></strong> from the node panel.</p>
 </li>
-<li>
-<p>Enter the path <code>/zvdz/mi\-qsg/v1\.0</code> in the <strong><code>Resource Path</code></strong> field and click <strong><code>Save</code></strong>.
-   <a href="https://wso2.github.io/docs-bi/assets/img/get-started/add-action.gif"><img src="https://wso2.github.io/docs-bi/assets/img/get-started/add-action.gif" alt="Add Action" width="70%"></a></p>
-</li>
-<li>
-<p>Click on the ➕ button again and select <strong><code>Return</code></strong> from the node panel.</p>
-</li>
-<li>Select the <code>value</code> variable from the dropdown and click <strong><code>Save</code></strong>. This step will return the response from the <code>HelloWorld</code> API endpoint.
-   <a href="https://wso2.github.io/docs-bi/assets/img/get-started/add-return.gif"><img src="https://wso2.github.io/docs-bi/assets/img/get-started/add-return.gif" alt="Add Return" width="70%"></a></li>
+<li>Fill the request details as below and click <strong><code>Save</code></strong>.</li>
 </ol>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>Variable Name</code></strong></td>
+<td><code>epResponse</code></td>
+</tr>
+<tr>
+<td><strong><code>Variable Type</code></strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><strong><code>Connection</code></strong></td>
+<td><code>externalEp</code></td>
+</tr>
+<tr>
+<td><strong><code>Target Type</code></strong></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><strong><code>Path</code></strong></td>
+<td><code>"/zvdz/mi-qsg/v1.0"</code></td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/get-started/add-action.gif"><img src="https://wso2.github.io/docs-bi/assets/img/get-started/add-action.gif" alt="Add Action" width="70%"></a> <br />
+10. Click on the ➕ button again and select <strong><code>Return</code></strong> from the node panel.<br />
+11. Select the <code>helloWorldResponse</code> variable as the <strong><code>Expression</code></strong> from the dropdown and click <strong><code>Save</code></strong>. This step will return the response from the <code>HelloWorld</code> API endpoint.
+   <a href="https://wso2.github.io/docs-bi/assets/img/get-started/add-return.gif"><img src="https://wso2.github.io/docs-bi/assets/img/get-started/add-return.gif" alt="Add Return" width="70%"></a></p>
 <h3 id="step-8-run-the-integration">Step 8: Run the integration<a class="headerlink" href="#step-8-run-the-integration" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Click on the <strong><code>Run</code></strong> button at top right corner to run the integration.</li>
