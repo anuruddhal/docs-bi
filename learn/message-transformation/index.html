@@ -906,22 +906,23 @@ This documentation is a work in progress.
 </ol>
 <h3 id="step-2-create-a-http-service">Step 2: Create a HTTP service.<a class="headerlink" href="#step-2-create-a-http-service" title="Permanent link">&para;</a></h3>
 <ol>
-<li>In the design view, click on the <strong><code>Add Construct</code></strong> button.</li>
-<li>Select <strong><code>HTTP Service</code></strong> from the service type.</li>
+<li>In the design view, click on the <strong><code>Add Artifact</code></strong> button.</li>
+<li>Select <strong><code>HTTP Service</code></strong> under the <strong><code>Integration as API</code></strong> category.</li>
 <li>Select the <strong><code>Create and use the default HTTP listener</code></strong> option from the <strong><code>Listener</code></strong> dropdown.</li>
 <li>Select <strong><code>Design from Scratch</code></strong> option as the <strong><code>The contract of the service</code></strong>.</li>
-<li>Enter the <strong><code>Service base path</code></strong> as  <code>/convert</code>.</li>
-<li>Click on the <strong><code>Create Service</code></strong> button to create the new service with the specified configurations.</li>
+<li>Specify the <strong><code>Service base path</code></strong> as <code>/convert</code>.</li>
+<li>Click on the <strong><code>Create</code></strong> button to create the new service with the specified configurations.</li>
 </ol>
 <h3 id="step-3-update-the-resource-method">Step 3: Update the resource method<a class="headerlink" href="#step-3-update-the-resource-method" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Click on three dots appear in front of the <code>greeting</code> resource and select edit to view and update the resource details.</li>
+<li>The service will have a default resource named <code>greeting</code> with the <strong><code>GET</code></strong> method. Click on three dots appear in front of the <code>greeting</code> resource and select edit to view and update the resource details.
+    <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/edit-resource.gif"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/edit-resource.gif" alt="Edit Resource" width="70%"></a></li>
 <li>Change the resource HTTP method to <strong><code>POST</code></strong>.</li>
 <li>Change the resource name as <code>toXml</code>.</li>
 <li>Add a payload parameter named <code>input</code> to the resource of type <code>json</code>. </li>
 <li>Change the 201 response return type to <code>xml</code>.</li>
 <li>Click on the <strong><code>Save</code></strong> button to update the resource with the specified configurations.
-    <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/update-resource.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/update-resource.png" alt="Update Resource" width="70%"></a></li>
+    <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/update-resource.gif"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/update-resource.gif" alt="Update Resource" width="70%"></a></li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Resource Method</p>
@@ -930,14 +931,16 @@ This documentation is a work in progress.
 <h3 id="step-4-add-the-transformation-logic">Step 4: Add the transformation logic<a class="headerlink" href="#step-4-add-the-transformation-logic" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Click on the <code>toXml</code> resource to navigate to the resource implementation designer view.</li>
+<li>Delete the default <code>Return</code> action from the resource.</li>
 <li>Hover to the arrow after start and click the ➕ button to add a new action to the resource.</li>
 <li>Select <strong><code>Function Call</code></strong> from the node panel.</li>
 <li>Search for <code>json to xml</code> and select the <strong><code>fromJson</code></strong> function from the suggestions.</li>
-<li>Change the <strong><code>Variable Name</code></strong> to <code>xmlData</code>, <strong><code>Variable Type</code></strong> as <code>xml</code> and <strong><code>JsonValue</code></strong> to <code>input</code>.</li>
+<li>Change the <strong><code>Variable Name</code></strong> to <code>xmlResult</code>, <strong><code>Variable Type</code></strong> as <code>xml</code> and <strong><code>JsonValue</code></strong> to <code>input</code>.</li>
 <li>Click on the <strong><code>Save</code></strong> button to add the function call to the resource.
-   <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-variable.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-variable.png"" alt="Add variable" width="70%"></a></li>
+    <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-variable.gif"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-variable.gif" alt="Add Function Call" width="70%"></a></li>
 <li>Add a new node after the <code>fromJson</code> function call and select <strong><code>Return</code></strong> from the node panel.</li>
-<li>Select the <code>xmlData</code> variable from the dropdown and click <strong><code>Save</code></strong>.</li>
+<li>Select the <code>xmlResult</code> variable from the dropdown and click <strong><code>Save</code></strong>.
+    <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-return.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-return.png" alt="Add Return" width="70%"></a></li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">JSON to XML Conversion</p>
@@ -961,7 +964,8 @@ This documentation is a work in progress.
         &lt;name&gt;John&lt;/name&gt;
         &lt;age&gt;30&lt;/age&gt;
         &lt;car&gt;Honda&lt;/car&gt;
-    &lt;/root&gt;</code></li>
+    &lt;/root&gt;</code>
+   <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/run-integration.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/run-integration.png" alt="Run Integration" width="70%"></a></li>
 <li>Additionally, the service can be tested using tools like <a href="https://www.postman.com/">Postman</a> or <a href="https://curl.se/">curl</a> by sending a POST request with a JSON payload to the service endpoint.
    <div class="highlight"><pre><span></span><code>curl -X POST &quot;http://localhost:9090/convert/toXml&quot; -H &quot;Content-Type: application/json&quot; -d &#39;{&quot;name&quot;:&quot;John&quot;, &quot;age&quot;:30, &quot;car&quot;:&quot;Honda&quot;}&#39;
 </code></pre></div></li>
