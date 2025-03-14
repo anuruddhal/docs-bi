@@ -932,7 +932,7 @@ This documentation is a work in progress.
 <li>Click on the <code>toXml</code> resource to navigate to the resource implementation designer view.</li>
 <li>Hover to the arrow after start and click the ➕ button to add a new action to the resource.</li>
 <li>Select <strong><code>Function Call</code></strong> from the node panel.</li>
-<li>Search for <code>fromJson</code> and select the <code>fromJson</code> function from the suggestions.</li>
+<li>Search for <code>json to xml</code> and select the <strong><code>fromJson</code></strong> function from the suggestions.</li>
 <li>Change the <strong><code>Variable Name</code></strong> to <code>xmlData</code>, <strong><code>Variable Type</code></strong> as <code>xml</code> and <strong><code>JsonValue</code></strong> to <code>input</code>.</li>
 <li>Click on the <strong><code>Save</code></strong> button to add the function call to the resource.
    <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-variable.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-variable.png"" alt="Add variable" width="70%"></a></li>
@@ -945,7 +945,7 @@ This documentation is a work in progress.
 </div>
 <h3 id="step-5-run-the-integration">Step 5: Run the integration<a class="headerlink" href="#step-5-run-the-integration" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Click on the <strong><code>Run</code></strong> on the run button in the top right corner to run the integration.</li>
+<li>Click on the <strong><code>Run</code></strong> button in the top-right corner to run the integration.</li>
 <li>The integration will start and the service will be available at <code>http://localhost:9090/convert</code>.</li>
 <li>Click on the <strong><code>Try it</code></strong> button to open the embedded HTTP client.</li>
 <li>Enter the JSON payload in the request body and click on the ▶️ button to send the request.
@@ -962,7 +962,7 @@ This documentation is a work in progress.
         &lt;age&gt;30&lt;/age&gt;
         &lt;car&gt;Honda&lt;/car&gt;
     &lt;/root&gt;</code></li>
-<li>Additionally the service can be tested using a tool like <a href="https://www.postman.com/">Postman</a> or <a href="https://curl.se/">curl</a> by sending a POST request with a JSON payload to the service endpoint.
+<li>Additionally, the service can be tested using tools like <a href="https://www.postman.com/">Postman</a> or <a href="https://curl.se/">curl</a> by sending a POST request with a JSON payload to the service endpoint.
    <div class="highlight"><pre><span></span><code>curl -X POST &quot;http://localhost:9090/convert/toXml&quot; -H &quot;Content-Type: application/json&quot; -d &#39;{&quot;name&quot;:&quot;John&quot;, &quot;age&quot;:30, &quot;car&quot;:&quot;Honda&quot;}&#39;
 </code></pre></div></li>
 </ol>
