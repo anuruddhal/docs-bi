@@ -1061,10 +1061,14 @@ Here is the blog post content:
 </ol>
 <h3 id="step-7-configure-model-for-natural-function">Step 7: Configure model for natural function<a class="headerlink" href="#step-7-configure-model-for-natural-function" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Press <code>Ctrl + Shift + P</code> on Windows and Linux, or <code>shift + ⌘ + P</code> on a Mac and type <code>&gt;Ballerina: Configure default model for natural functions</code> to configure the default model for natural functions.
+<li>Press <code>Ctrl + Shift + P</code> on Windows and Linux, or <code>shift + ⌘ + P</code> on a Mac and type <code>&gt;Ballerina: Configure default model for natural functions</code> to configure the default model for natural functions. <br />
 <a href="https://wso2.github.io/docs-bi/assets/img/natural-functions/configure-model.png"><img src="https://wso2.github.io/docs-bi/assets/img/natural-functions/configure-model.png" alt="Configure Model" width="70%"></a></li>
 </ol>
 <h3 id="step-8-run-the-integration">Step 8: Run the integration<a class="headerlink" href="#step-8-run-the-integration" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Response May Vary</p>
+<p>Since this integration involves an LLM (Large Language Model) call, the response values may not always be identical across different executions.</p>
+</div>
 <ol>
 <li>Click on the <strong><code>Run</code></strong> button in the top-right corner to run the integration.</li>
 <li>The integration will start and the service will be available at <code>http://localhost:9090/blogs</code>.</li>
@@ -1081,7 +1085,7 @@ Here is the blog post content:
 <span class="w">    </span><span class="nt">&quot;rating&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span>
 <span class="p">}</span>
 </code></pre></div></li>
-<li>The blog content is analyzed by the natural function to suggest a category and rate it based on predefined criteria. <br />
+<li>The blog content is analyzed by the natural function to suggest a category and rate it based on predefined criteria.    <br />
 <a href="https://wso2.github.io/docs-bi/assets/img/natural-functions/run-integration.png"><img src="https://wso2.github.io/docs-bi/assets/img/natural-functions/run-integration.png" alt="Run Integration" width="70%"></a></li>
 </ol>
 
